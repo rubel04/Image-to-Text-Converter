@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      src="https://kit.fontawesome.com/bc436b3cc3.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+    <title>Image to Text Converter</title>
+  </head>
+  <body class="bg-[#e9f0ff]">
+    <section class="flex my-16 justify-center">
+      <div class="bg-white w-1/2 rounded-lg">
+        <div class="border py-12 border-dashed m-4 rounded-lg border-[#6990f2]">
+          <label class="cursor-pointer" for="fileInput">
+            <span class="flex justify-center">
+              <i
+                class="fa-solid text-8xl mb-4 text-[#6990f2] fa-cloud-arrow-up"
+              ></i>
+            </span>
+            <p class="text-center text-lg">Drop, Upload or Paste image</p>
+            <p class="text-center text-[#a6c0f7] mt-1 mb-4">
+              Supported formats: JPG, PNG, GIF, JFIF (JPEG), HEIC, PDF
+            </p>
+            <div class="flex items-center gap-4 justify-center">
+                <div id="images" class="w-20 h-20 hidden my-2 rounded-md border-2 border-gray-400 bg-center bg-no-repeat bg-cover">
+
+                </div>
+                <p id="text" class="hidden">Image Uploaded</p>
+            </div>
+            <div class="flex justify-center gap-4">
+              <span
+                class="bg-[#e9f0ff] transition hover:bg-[#dce6fc] text-lg py-2 px-4 rounded-md cursor-pointer inline-flex items-center"
+              >
+                <i class="fa-solid fa-arrow-up-from-bracket mr-2"></i>Upload
+              </span>
+              <button
+                onclick="extractImage()"
+                class="bg-[#e9f0ff] transition hover:bg-[#dce6fc] text-lg py-2 px-4 rounded-md cursor-pointer"
+              >
+                Extract
+              </button>
+              <input
+                type="file"
+                id="fileInput"
+                name="file"
+                accept="image/*"
+                class="hidden"
+              />
+            </div>
+          </label>
+        </div>
+      </div>
+    </section>
+    <section class="flex justify-center" id="extract-text"></section>
+    <script src="./script.js"></script>
+  </body>
+</html>
