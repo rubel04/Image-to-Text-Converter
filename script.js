@@ -14,7 +14,7 @@ const extractImage = () => {
         extractText.innerText = ` ${err}`;
       });
   } else {
-    extractText.innerHTML = "Please select an image";
+    extractText.innerHTML = "<span class='text-red-600'>!! Please select an image</span>";
   }
 };
 
